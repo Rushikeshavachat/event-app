@@ -1,24 +1,27 @@
 // ====== USER PARAMS
 export type CreateUserParams = {
-  clerkId: string
-  firstName: string
-  lastName: string
-  username: string
-  email: string
-  photo: string
+
+  clerkId: string | null
+  firstName: string | null
+  lastName: string | null
+  username: string | null
+  email: string | null
+  photo: string | null
 }
 
 export type UpdateUserParams = {
-  firstName: string
-  lastName: string
-  username: string
-  photo: string
+
+  firstName: string | null
+  lastName: string | null
+  username: string | null
+  photo: string  | null
 }
 
 // ====== EVENT PARAMS
 export type CreateEventParams = {
-  userId: string
+  userId: string | null
   event: {
+    id:string | null
     title: string
     description: string
     location: string
