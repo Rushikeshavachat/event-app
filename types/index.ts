@@ -5,14 +5,14 @@ export type CreateUserParams = {
    username: string | null;
     firstName: string | null;
      lastName: string | null;
-     photo: string;
+     photo: string | null;
 }
 
 export type UpdateUserParams = {
   firstName: string | null; 
   lastName: string | null;
-   username: string; 
-   photo: string; 
+   username: string | null; 
+   photo: string | null; 
 }
 
 // ====== EVENT PARAMS
