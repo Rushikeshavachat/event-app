@@ -1,5 +1,5 @@
 // ====== USER PARAMS
-type CreateUserParams = {
+ export type CreateUserParams = {
   clerkId: string;
   email: string;
   username: string;
