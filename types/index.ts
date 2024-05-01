@@ -1,4 +1,7 @@
 // ====== USER PARAMS
+// export type ClientUploadedFileData{
+//   uploadedBy: string
+// }
  export type CreateUserParams = {
   clerkId: string;
   email: string;
