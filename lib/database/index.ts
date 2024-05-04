@@ -10,8 +10,8 @@ export const connectToDatabase = async () => {
 
   if(!MONGODB_URI) throw new Error('MONGODB_URI is missing');
 
-  cached.Promise.all = cached.promise || mongoose.connect(MONGODB_URI, {
-    dbName: ' EVENTLY',
+  cached.promise = cached.promise || mongoose.connect(MONGODB_URI, {
+    dbName: 'mern-evently-app',
     bufferCommands: false,
   })
 

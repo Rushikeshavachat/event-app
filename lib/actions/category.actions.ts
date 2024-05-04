@@ -10,6 +10,7 @@ export const createCategory = async ({ categoryName }: CreateCategoryParams) => 
     await connectToDatabase();
 
     const newCategory = await Category.create({ name: categoryName });
+console.log(newCategory);
 
     return JSON.parse(JSON.stringify(newCategory));
   } catch (error) {
@@ -22,7 +23,6 @@ export const getAllCategories = async () => {
     await connectToDatabase();
 
     const categories = await Category.find();
-console.log(categories);
 
     return JSON.parse(JSON.stringify(categories));
   } catch (error) {
