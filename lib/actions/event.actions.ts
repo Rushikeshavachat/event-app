@@ -34,10 +34,11 @@ export async function createEvent({ userId, event, path }: CreateEventParams) {
 
     const organizer = await User.findById(userId)
     if (!organizer) throw new Error('Organizer not found')
-
+      console.log(organizer);
+      
     const newEvent = await Event.create({ ...event, category: event.categoryId, organizer: userId })
     revalidatePath(path)
-
+console.log(newEvent)
     return JSON.parse(JSON.stringify(newEvent))
   } catch (error) {
     handleError(error)
@@ -50,7 +51,7 @@ export async function getEventById(eventId: string) {
     await connectToDatabase()
 
     const event = await populateEvent(Event.findById(eventId))
-console.log(event.clerkId)
+console.log(event)
     if (!event) throw new Error('Event not found')
 
     return JSON.parse(JSON.stringify(event))
