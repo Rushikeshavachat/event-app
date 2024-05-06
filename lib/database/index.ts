@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI!;
-console.log(process.env.MONGODB_URI!);
+const MONGODB_URI = process.env.MONGODB_URI;
 
 let cached = (global as any).mongoose || { conn: null, promise: null };
 
@@ -14,13 +13,8 @@ export const connectToDatabase = async () => {
     dbName: 'EVENTLY',
     bufferCommands: false,
   })
-  console.log({name});
-  
-
 
   cached.conn = await cached.promise;
-  console.log(cached);
+
   return cached.conn;
- 
-  
 }
